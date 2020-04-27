@@ -1,4 +1,4 @@
-from flask import Flask, Response, jsonify
+from flask import Flask, Response, jsonify, request
 from github import Github
 	
 # settings.py
@@ -15,17 +15,25 @@ load_dotenv(dotenv_path)
 app = Flask(__name__)
 
 @app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
+@app.route('/<path:path>', methods=['GET'])
 def catch_all(path):
+
     user = "ReubenMathew"
     pwd = secret_key = os.getenv('github_pass')
+
+    repo_name = request.args.get('repo')
+
     g = Github(user, pwd)
     repos = {}
     # Then play with your Github objects:
     for repo in g.get_user().get_repos():
         repos[repo.name] = repo.get_topics()
     # print(repos)
-    return jsonify(repos)
+    print("Request Successful")
+    if(repo_name):
+        return jsonify(result = repos[repo_name])
+    else:
+        return jsonify(repos)
 
 
 if __name__ == "__main__":
