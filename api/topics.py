@@ -29,7 +29,7 @@ def catch_all(path):
     for repo in g.get_user().get_repos():
         repos[repo.name] = repo.get_topics()
     # print(repos)
-    print("Request Successful")
+    print("Topic Request Successful")
     if(repo_name):
         return jsonify(result = repos[repo_name])
     else:
