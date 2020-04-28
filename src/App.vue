@@ -31,8 +31,8 @@
 
 import Name from './components/Name'
 import About from './components/About'
-import Experience from './components/Experience'
-import Education from './components/Education'
+import Experience from './components/Experience/Experience'
+import Education from './components/Education/Education'
 import Leadership from './components/Leadership'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
