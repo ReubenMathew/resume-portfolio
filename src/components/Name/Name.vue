@@ -9,7 +9,7 @@
     <h1 class="text-3xl font-semibold text-gray-700">
         Reuben Ninan
     </h1>
-    <div class="text-lg font-semibold text-gray-650" to="/">Software Engineer</div>
+    <!-- <div class="text-lg font-semibold text-gray-650" to="/">Software Engineer</div> -->
     </div>
     </header>
 </template>

@@ -8,15 +8,15 @@
       <Name/>
 
 <!-- Column -->
-      <div class="md:col-count-2 print:col-count-2 col-gap-md md:h-letter-col print:h-letter-col col-fill-auto">
+      <div class="">
         <!-- Use mt-3 class when the element isn’t the first one in the column -->
         
-        <About/>
-        <Experience/>
-        <Education/>
-        <Leadership/>
-        <Projects/>
-        <Contact/>
+        <About />
+        <Experience />
+        <Education />
+        <Leadership />
+        <Projects />
+        <Contact />
         
       </div>
       <!-- end Column -->
@@ -29,13 +29,13 @@
 
 <script>
 
-import Name from './components/Name'
-import About from './components/About'
+import Name from './components/Name/Name'
+import About from './components/About/About'
 import Experience from './components/Experience/Experience'
 import Education from './components/Education/Education'
-import Leadership from './components/Leadership'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
+import Leadership from './components/Leadership/Leadership'
+import Projects from './components/Projects/Projects'
+import Contact from './components/Contact/Contact'
 
 export default {
   name: 'App',

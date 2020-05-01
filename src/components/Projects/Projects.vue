@@ -8,6 +8,8 @@
             PROJECTS
         </h2>
 
+        <ProjectCard name="DocScanner"/>
+
         <section class="mb-4 break-inside-avoid">
             <header>
             <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
@@ -194,3 +196,14 @@
 
     </section>
 </template>
+
+<script>
+import ProjectCard from './ProjectCard'
+
+export default {
+    name: 'Projects',
+    components: {
+        ProjectCard,
+    },
+}
+</script>
