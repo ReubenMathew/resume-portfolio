@@ -40,7 +40,7 @@ export default {
             getDescriptionFromBackend() {
                 axios.get('/api/description',{
                     params: {
-                    repo: name
+                    repo: this.name
                     }
                 })
                 .then((response) => {
