@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     data () {
             return {
@@ -36,17 +38,15 @@ export default {
                 this.description = this.getDescriptionFromBackend()
             },
             getDescriptionFromBackend() {
-                axios.get('api/description',{
+                axios.get('/api/description',{
                     params: {
                     repo: name
                     }
                 })
-                .then(response => {
-                    this.track = response.data.curr
-                    console.log(response);
+                .then((response) => {
+                    console.log(response.data);
                 })
-                .catch(error => {
-                    console.log(response);
+                .catch((error) => {
                     console.log(error)
                 })
             }
