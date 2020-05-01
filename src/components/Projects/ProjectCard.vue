@@ -13,13 +13,12 @@
         </p> -->
         </header>
         <p class="mt-2 text-md text-gray-700 leading-normal">
-        An example of a web application that leverages distributed systems technologies.
+            {{description}}
         </p>
         <ul class="my-2 mb-6 flex flex-wrap text-md leading-relaxed">
             <li class="rounded-full px-3 mr-2 mt-2 text-base text-gray-750 print:bg-white print:border-inset bg-gray-200">
                 NuxtJS
             </li>
-    
         </ul>
     </section>
 </template>
@@ -44,6 +43,7 @@ export default {
                     }
                 })
                 .then((response) => {
+                    this.description = response.data.result
                     console.log(response.data);
                 })
                 .catch((error) => {
