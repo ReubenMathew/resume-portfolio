@@ -22,7 +22,7 @@ def catch_all(path):
     pwd = secret_key = os.getenv('github_pass')
 
     repo_name = request.args.get('repo')
-    field = repo_name = request.args.get('field')
+    field = request.args.get('field')
 
     repos = {}
 
