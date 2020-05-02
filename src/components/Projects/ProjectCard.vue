@@ -47,6 +47,9 @@ export default {
                     console.log(error)
                 })
             },
+            getTopics() {
+                this.description = this.getTopicsFromBackend()
+            },
             getTopicsFromBackend() {
                 axios.get('/api/topics',{
                     params: {
