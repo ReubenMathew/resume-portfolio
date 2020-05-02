@@ -36,7 +36,8 @@ export default {
             getDescriptionFromBackend() {
                 axios.get('/api/description',{
                     params: {
-                        repo: this.name
+                        repo: this.name,
+                        field: 'description'
                     }
                 })
                 .then((response) => {
@@ -48,12 +49,13 @@ export default {
                 })
             },
             getTopics() {
-                this.description = this.getTopicsFromBackend()
+                this.topics = this.getTopicsFromBackend()
             },
             getTopicsFromBackend() {
-                axios.get('/api/topics',{
+                axios.get('/api/description',{
                     params: {
-                        repo: this.name
+                        repo: this.name,
+                        field: 'topics'
                     }
                 })
                 .then((response) => {

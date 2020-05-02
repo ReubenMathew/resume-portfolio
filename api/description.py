@@ -38,7 +38,7 @@ def catch_all(path):
         # print(repos)
         print("Request Successful")
 
-    return jsonify(result = repos[repo_name])=
+    return jsonify(result = repos[repo_name])
 
 
 if __name__ == "__main__":
