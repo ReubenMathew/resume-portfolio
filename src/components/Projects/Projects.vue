@@ -8,7 +8,7 @@
             PROJECTS
         </h2>
 
-        <ProjectCard name="resume-portfolio"/>
+        <!-- <ProjectCard name="resume-portfolio"/> -->
 
         <section class="mb-4 break-inside-avoid">
             <header>

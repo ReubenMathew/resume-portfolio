@@ -31,9 +31,11 @@ def catch_all(path):
     if(field == 'topics'):
         for repo in g.get_user().get_repos():
             repos[repo.name] = repo.get_topics()
-    elif(field == 'description'):\
+    elif(field == 'description'):
         for repo in g.get_user().get_repos():
             repos[repo.name] = repo.description
+    else:
+        return jsonify(repos)
 
         # print(repos)
         print("Request Successful")
