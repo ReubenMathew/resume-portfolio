@@ -16,8 +16,8 @@
             {{description}}
         </p>
         <ul class="my-2 mb-6 flex flex-wrap text-md leading-relaxed">
-            <li class="rounded-full px-3 mr-2 mt-2 text-base text-gray-750 print:bg-white print:border-inset bg-gray-200">
-                NuxtJS
+            <li v-for="topic in topics" v-bind:key="topic" class="rounded-full px-3 mr-2 mt-2 text-base text-gray-750 print:bg-white print:border-inset bg-gray-200">
+                {topic}
             </li>
         </ul>
     </section>
@@ -49,9 +49,29 @@ export default {
                 .catch((error) => {
                     console.log(error)
                 })
+            },
+            getTopics() {
+                this.topics = this.getTopicsFromBackend()
+            },
+            getTopicsFromBackend() {
+                axios.get('/api/topics',{
+                    params: {
+                    repo: this.name
+                    }
+                })
+                .then((response) => {
+                    this.topics = response.data.result
+                    console.log(response.data);
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
             }
+            
         }, created () {
             this.getDescription(),
+            this.getDescriptionFromBackend()
+            this.getTopics(),
             this.getDescriptionFromBackend()
     },
     props: [

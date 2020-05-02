@@ -33,7 +33,7 @@ def catch_all(path):
     if(repo_name):
         return jsonify(result = repos[repo_name])
     else:
-        return json.dumps({'success':True, 'dataAvailable' : False}), 204, {'ContentType':'application/json'}
+        return json.dumps({'success':True, 'dataAvailable' : False}), 200, {'ContentType':'application/json'}
 
 
 if __name__ == "__main__":
