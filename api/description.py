@@ -26,14 +26,14 @@ def catch_all(path):
     g = Github(user, pwd)
     repos = {}
     # Then play with your Github objects:
-    for repo in g.get_user().get_repos():
-        repos[repo.name] = repo.description
-    # print(repos)
-    print("Description Request Successful")
     if(repo_name):
-        return jsonify(result = repos[repo_name])
-    else:
-        return json.dumps({'success':True, 'dataAvailable' : False}), 200, {'ContentType':'application/json'}
+        for repo in g.get_user().get_repos():
+            repos[repo.name] = repo.description
+        # print(repos)
+        print("Description Request Successful")
+
+    return jsonify(result = repos[repo_name])
+
 
 
 if __name__ == "__main__":

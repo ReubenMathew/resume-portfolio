@@ -36,7 +36,7 @@ export default {
             getDescriptionFromBackend() {
                 axios.get('/api/description',{
                     params: {
-                    repo: this.name
+                        repo: this.name
                     }
                 })
                 .then((response) => {
@@ -53,7 +53,7 @@ export default {
             getTopicsFromBackend() {
                 axios.get('/api/topics',{
                     params: {
-                    repo: this.name
+                        repo: this.name
                     }
                 })
                 .then((response) => {
