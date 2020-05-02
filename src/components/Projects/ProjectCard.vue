@@ -47,9 +47,6 @@ export default {
                     console.log(error)
                 })
             },
-            getTopics() {
-                this.topics = this.getTopicsFromBackend()
-            },
             getTopicsFromBackend() {
                 axios.get('/api/topics',{
                     params: {
@@ -69,7 +66,7 @@ export default {
             this.getDescription(),
             this.getDescriptionFromBackend(),
             this.getTopics(),
-            this.getDescriptionFromBackend()
+            this.getTopicsFromBackend()
     },
     props: [
         'name',
