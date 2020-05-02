@@ -22,18 +22,23 @@ def catch_all(path):
     pwd = secret_key = os.getenv('github_pass')
 
     repo_name = request.args.get('repo')
+    field = repo_name = request.args.get('field')
+
+    repos = {}
 
     g = Github(user, pwd)
-    repos = {}
-    # Then play with your Github objects:
-    if(repo_name):
+
+    if(field == 'topics'):
+        for repo in g.get_user().get_repos():
+            repos[repo.name] = repo.get_topics()
+    elif(field == 'description'):\
         for repo in g.get_user().get_repos():
             repos[repo.name] = repo.description
+
         # print(repos)
-        print("Description Request Successful")
+        print("Request Successful")
 
-    return jsonify(result = repos[repo_name])
-
+    return jsonify(result = repos[repo_name])=
 
 
 if __name__ == "__main__":
